@@ -1,0 +1,23 @@
+from ahk import AHK
+import time
+ahk=AHK()
+def run():
+    ahk.click(917, 71,button='L')
+    time.sleep(0.1)
+    ahk.click(1215, 146,button='L')
+    time.sleep(0.1)
+    ahk.click(1377, 62,button='L')
+    time.sleep(0.1)
+    ahk.click(1053, 480,button='L')
+    time.sleep(0.1)
+    ahk.click(455, 527,button='L')
+    time.sleep(0.1)
+    ahk.click(584, 434,button='R')
+    time.sleep(0.1)
+    ahk.click(1873, 566,button='R')
+    time.sleep(0.1)
+    ahk.click(983, 93,button='R')
+    time.sleep(0.1)
+ahk.add_hotkey('^#g',callback = run)
+ahk.start_hotkeys()
+ahk.block_forever()

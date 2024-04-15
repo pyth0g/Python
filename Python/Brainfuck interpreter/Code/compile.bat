@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onefile --console --icon "C:/Users/lenar/OneDrive/Python/Brainfuck interpreter/Resources/bf.ico"  "C:/Users/lenar/OneDrive/Python/Brainfuck interpreter/Code/bf.py"

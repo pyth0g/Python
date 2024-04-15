@@ -1,0 +1,4 @@
+Configured to open with:
+cpt://
+
+If it doesn't work first make sure to run the CPT\cpt.exe file once

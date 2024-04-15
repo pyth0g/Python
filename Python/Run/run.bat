@@ -1,0 +1,1 @@
+forfiles /p "C:\Users\lenar\Desktop\cmd" /c "cmd /c start /min cmd /c "@path""

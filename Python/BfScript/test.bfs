@@ -1,0 +1,28 @@
+str bob = "hello1"
+
+str bobtwo = "electricboggallo"
+
+str abc = "xyz" + "nomnom"
+
+str hi = "hello, world!"
+
+print bobtwo
+print bob
+print abc
+print hi
+
+#print bob
+
+##loop inf
+
+#loop inf
+#usr = usr + input
+#if usr == 13
+#break
+#end
+#print usr
+#end
+
+#print "\n"
+
+#end

