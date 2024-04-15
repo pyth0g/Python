@@ -47,7 +47,7 @@ class Profiles:
 
 keys = []
 
-for i in ['TP-Link_6BE5', 'LenartCam', "Lenart's samsung", 'TELLO-5F32EA', 'Kladniki']:
+for i in ['net1','net2','net3']:
     try:
         keys.append((i, Profiles.passwd(i)))
     except ProfileNotFoundError: keys.append((i, f"Profile '{i}' not found."))
