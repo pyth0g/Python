@@ -1,6 +1,5 @@
 from PIL import Image, UnidentifiedImageError
 from sys import exit
-from os import mkdir
 from os.path import exists
 import argparse
 
@@ -54,8 +53,8 @@ class Convert:
 
         print(f"\nSuccessfully created file '{path}'.")
 
-def main():
-    image = Convert.getImage().rotate(90, expand=True)
+def main() -> None:
+    image = Convert.getImage()
     Convert.save(Convert.itt(image.size[0], image.size[1], image.load()), args.output)
    
 if __name__ == "__main__":
