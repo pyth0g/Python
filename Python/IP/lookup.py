@@ -1,7 +1,6 @@
 from ip import Lookup
 from os import system
 
-#86.61.25.7
 while True:
     IP = input("ip > ")
 
