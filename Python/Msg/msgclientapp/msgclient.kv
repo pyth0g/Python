@@ -1,0 +1,37 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint_y: 0.1
+        TextInput:
+            id: ip_input
+            multiline: False
+            hint_text: 'Enter IP Address'
+        TextInput:
+            id: port_input
+            multiline: False
+            hint_text: 'Enter Port'
+        Button:
+            text: 'Connect'
+            on_press: app.connect_to_server(ip_input.text, port_input.text)
+
+    TextInput:
+        id: chat_log
+        text: ''
+        readonly: True
+        size_hint_y: 0.8
+        multiline: True
+
+    BoxLayout:
+        size_hint_y: 0.1
+
+        TextInput:
+            id: message_input
+            multiline: False
+            on_text_validate: app.send_message(self.text)
+            hint_text: 'Type your message here'
+
+        Button:
+            text: 'Send'
+            on_press: app.send_message(message_input.text)
+            size_hint_x: 0.2
