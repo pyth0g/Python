@@ -19,7 +19,10 @@ def accept_conn(s: socket.socket, info):
             break
 
         if data.decode() == "exit":
+            print(info(f"Connection from {addr[0]}:{addr[1]} closed"))
+            conns.remove(c)
             c.close()
+            break
 
         print(info(f"{addr[0]}:{addr[1]} > {data.decode()}"))
         for i in conns:
@@ -31,12 +34,12 @@ def start_server():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        server_address = ("0.0.0.0", 31415)
+        server_address = (input("ip: "), int(input("port: ")))
         info = lambda msg: f"{time.strftime('[%H:%M:%S]')} {msg}"
 
         print(info("Starting..."))
         s.bind(server_address)
-        print(info(f"Started server on {server_address[0]}:{server_address[1]}"))
+        print(info(f"Started server on {s.getsockname()}"))
    
         s.listen(5)
         

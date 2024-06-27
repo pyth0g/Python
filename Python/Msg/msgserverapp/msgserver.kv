@@ -1,0 +1,23 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint_y: 0.1
+        TextInput:
+            id: ip_input
+            multiline: False
+            hint_text: 'Enter IP Address'
+        TextInput:
+            id: port_input
+            multiline: False
+            hint_text: 'Enter Port'
+        Button:
+            text: 'Start'
+            on_press: app.start_server(ip_input.text, port_input.text)
+
+    TextInput:
+        id: log
+        text: ''
+        readonly: True
+        size_hint_y: 0.8
+        multiline: True

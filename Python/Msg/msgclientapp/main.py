@@ -1,6 +1,5 @@
 import socket
 import threading
-from sys import exit
 from kivy.app import App
 from kivy.clock import Clock
 
@@ -15,7 +14,6 @@ class MsgClient(App):
             self.s.connect(self.addr)
         except Exception as e:
             print(e)
-            exit()
 
         self.update_chat_log(f"Connected to {self.addr[0]}:{self.addr[1]}")
         threading.Thread(target=self.recv).start()
@@ -27,18 +25,16 @@ class MsgClient(App):
                 Clock.schedule_once(lambda dt: self.update_chat_log(msg), 0)
         except ConnectionAbortedError:
             self.update_chat_log(f"Connection to {self.addr[0]}:{self.addr[1]} closed")
-            exit()
 
     def update_chat_log(self, msg):
         self.root.ids.chat_log.text += f"{msg}\n"
 
     def send_message(self, msg):
         if msg == "exit":
-            self.stop()
-            return
+            self.update_chat_log(f"Connection to {self.addr[0]}:{self.addr[1]} closed")
         
         self.s.send(msg.encode())
-        self.update_chat_log(msg)
+        if msg != "exit": self.update_chat_log(msg)
         self.root.ids.message_input.text = ''
 
     def stop(self):

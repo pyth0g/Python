@@ -10,7 +10,7 @@ def recv(s: socket.socket):
         exit()
 
 
-addr = ("192.168.1.36", 31415)
+addr = (input("ip: "), int(input("port: ")))
 
 s = socket.socket()
 try: 

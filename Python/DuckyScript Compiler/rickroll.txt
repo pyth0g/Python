@@ -1,0 +1,9 @@
+DEFAULTDELAY 10
+GUI r
+STRING cmd
+ENTER
+DELAY 1000
+STRING echo Add-Type -TypeDefinition @^" > volup.ps1 & echo using System; using System.Runtime.InteropServices; public class Audio{ >> volup.ps1 & echo     [DllImport("user32.dll")] >> volup.ps1 & echo     public static extern int SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam); private const int APPCOMMAND_VOLUME_UP = 0xA0000; private const int WM_APPCOMMAND = 0x319; public static void MaxVolume(){SendMessageW(new IntPtr(0xffff), WM_APPCOMMAND, IntPtr.Zero, (IntPtr)APPCOMMAND_VOLUME_UP);}} >> volup.ps1 & echo ^"@ >> volup.ps1 & echo [Audio]::MaxVolume() >> volup.ps1 & powershell -ExecutionPolicy Bypass -File volup.ps1
+ENTER
+STRING curl -L "https://drive.google.com/uc?export=download&id=1i9D3aHKtunh_faIhoXj2SHoYy7CuXp1E" --output C:/Users/%username%/Downloads/never-gonna-give-you-up.m4a & echo Dim oPlayer > rickroll.vbs & echo Set oPlayer = CreateObject("WMPlayer.OCX") >> rickroll.vbs & echo Set oShell = CreateObject( "WScript.Shell" ) >> rickroll.vbs & echo userprofile = oShell.ExpandEnvironmentStrings("%userprofile%") >> rickroll.vbs & echo oPlayer.URL = "%userprofile%\downloads\never-gonna-give-you-up.m4a" >> rickroll.vbs & echo oPlayer.controls.play >> rickroll.vbs & echo While oPlayer.playState ^<^> 1 >> rickroll.vbs & echo   WScript.Sleep 100 >> rickroll.vbs & echo Wend >> rickroll.vbs & echo oPlayer.close >> rickroll.vbs & start rickroll.vbs & exit
+ENTER
