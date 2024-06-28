@@ -44,27 +44,27 @@ class MsgServer(App):
 
     def _start_server(self, ip: str, port: int):
         try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             
             server_address = (str(ip), int(port))
 
             self.update_log(info("Starting..."))
-            s.bind(server_address)
+            self.s.bind(server_address)
             self.update_log(info(f"Started server on {ip}:{port}"))
     
-            s.listen(5)
+            self.s.listen(5)
             
             while True:
-                t = threading.Thread(target=self.accept_conn, args=(s, info))
+                t = threading.Thread(target=self.accept_conn, args=(self.s, info))
                 t.start()
                 time.sleep(0.5)
 
         except Exception as e:
             self.update_log(info(f"An error occurred: {e}"))
         
-        finally:
-            s.close()
-            self.update_log(info("Server closed"))
+    def stop(self):
+        self.s.close()
+        self.update_log(info("Server closed"))
 
     def start_server(self, ip: str, port: int):
         threading.Thread(target=self._start_server, args=(ip, port)).start()

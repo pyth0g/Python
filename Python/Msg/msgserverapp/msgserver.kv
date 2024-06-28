@@ -6,6 +6,7 @@ BoxLayout:
         TextInput:
             id: ip_input
             multiline: False
+            text: '0.0.0.0'
             hint_text: 'Enter IP Address'
         TextInput:
             id: port_input
@@ -14,6 +15,9 @@ BoxLayout:
         Button:
             text: 'Start'
             on_press: app.start_server(ip_input.text, port_input.text)
+        Button:
+            text: 'Stop'
+            on_press: app.stop()
 
     TextInput:
         id: log

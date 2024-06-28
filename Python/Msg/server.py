@@ -39,7 +39,7 @@ def start_server():
 
         print(info("Starting..."))
         s.bind(server_address)
-        print(info(f"Started server on {s.getsockname()}"))
+        print(info(f"Started server on {server_address[0]}:{server_address[1]}"))
    
         s.listen(5)
         
